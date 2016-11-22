@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_SpectraAnalyzer(object):
     def setupUi(self, SpectraAnalyzer):
         SpectraAnalyzer.setObjectName("SpectraAnalyzer")
@@ -209,10 +210,10 @@ class Ui_SpectraAnalyzer(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     SpectraAnalyzer = QtWidgets.QMainWindow()
     ui = Ui_SpectraAnalyzer()
     ui.setupUi(SpectraAnalyzer)
     SpectraAnalyzer.show()
     sys.exit(app.exec_())
-
