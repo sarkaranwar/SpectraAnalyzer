@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SpectraAnalyzer</class>
+ <widget class="QMainWindow" name="SpectraAnalyzer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1297</width>
+    <height>646</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SpectraAnalyzer</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_Project">
+       <attribute name="title">
+        <string>Project</string>
+       </attribute>
+       <widget class="QLabel" name="label_project_sample">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Samples Folders</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>35</y>
+          <width>401</width>
+          <height>521</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="2" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_3"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_7"/>
+         </item>
+         <item row="6" column="1">
+          <widget class="QPushButton" name="pushButton_browse_7">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_5"/>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_8"/>
+         </item>
+         <item row="5" column="1">
+          <widget class="QPushButton" name="pushButton_browse_6">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_4"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPushButton" name="pushButton_browse_3">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_2"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="pushButton_browse_4">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_6"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QPushButton" name="pushButton_browse_5">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_1"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="pushButton_browse_1">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="pushButton_browse_2">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <widget class="QPushButton" name="pushButton_browse_10">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="1">
+          <widget class="QPushButton" name="pushButton_browse_12">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="1">
+          <widget class="QPushButton" name="pushButton_browse_11">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_9"/>
+         </item>
+         <item row="12" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_13"/>
+         </item>
+         <item row="12" column="1">
+          <widget class="QPushButton" name="pushButton_browse_13">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_11"/>
+         </item>
+         <item row="11" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_12"/>
+         </item>
+         <item row="8" column="1">
+          <widget class="QPushButton" name="pushButton_browse_9">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QPushButton" name="pushButton_browse_8">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_10"/>
+         </item>
+         <item row="13" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_14"/>
+         </item>
+         <item row="15" column="1">
+          <widget class="QPushButton" name="pushButton_browse_16">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="1">
+          <widget class="QPushButton" name="pushButton_browse_14">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="14" column="1">
+          <widget class="QPushButton" name="pushButton_browse_15">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="15" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_16"/>
+         </item>
+         <item row="14" column="0">
+          <widget class="QLineEdit" name="lineEdit_project_Sample_15"/>
+         </item>
+        </layout>
+       </widget>
+       <zorder>lineEdit_project_Sample_1</zorder>
+       <zorder>label_project_sample</zorder>
+       <zorder>lineEdit_project_Sample_1</zorder>
+       <zorder>lineEdit_project_Sample_2</zorder>
+       <zorder>lineEdit_project_Sample_3</zorder>
+       <zorder>lineEdit_project_Sample_4</zorder>
+       <zorder>lineEdit_project_Sample_5</zorder>
+       <zorder>lineEdit_project_Sample_6</zorder>
+       <zorder>lineEdit_project_Sample_7</zorder>
+       <zorder>lineEdit_project_Sample_8</zorder>
+       <zorder>lineEdit_project_Sample_9</zorder>
+       <zorder>lineEdit_project_Sample_10</zorder>
+       <zorder>lineEdit_project_Sample_11</zorder>
+       <zorder>lineEdit_project_Sample_12</zorder>
+       <zorder>lineEdit_project_Sample_13</zorder>
+       <zorder>lineEdit_project_Sample_14</zorder>
+       <zorder>lineEdit_project_Sample_15</zorder>
+       <zorder>lineEdit_project_Sample_16</zorder>
+       <zorder>pushButton_browse_1</zorder>
+       <zorder>pushButton_browse_2</zorder>
+       <zorder>pushButton_browse_3</zorder>
+       <zorder>pushButton_browse_4</zorder>
+       <zorder>pushButton_browse_5</zorder>
+       <zorder>pushButton_browse_6</zorder>
+       <zorder>pushButton_browse_7</zorder>
+       <zorder>pushButton_browse_8</zorder>
+       <zorder>pushButton_browse_9</zorder>
+       <zorder>pushButton_browse_10</zorder>
+       <zorder>pushButton_browse_11</zorder>
+       <zorder>pushButton_browse_12</zorder>
+       <zorder>pushButton_browse_13</zorder>
+       <zorder>pushButton_browse_14</zorder>
+       <zorder>pushButton_browse_15</zorder>
+       <zorder>pushButton_browse_16</zorder>
+      </widget>
+      <widget class="QWidget" name="tab_Peaks">
+       <attribute name="title">
+        <string>Peaks</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1297</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
