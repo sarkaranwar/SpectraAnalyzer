@@ -6,9 +6,9 @@ from PyQt5.QtGui import *
 from spectraanalyzer_ui import Ui_SpectraAnalyzer
 
 
-class spectraanalyzer(QMainWindow, Ui_SpectraAnalyzer):
+class SpectraAnalyzer(QMainWindow, Ui_SpectraAnalyzer):
     def __init__(self, parent=None):
-        super(spectraanalyzer, self).__init__(parent)
+        super(SpectraAnalyzer, self).__init__(parent)
         self.setupUi(self)
 
         # Connect "add" button with a custom function (addInputTextToListbox)
@@ -95,9 +95,10 @@ class spectraanalyzer(QMainWindow, Ui_SpectraAnalyzer):
 
 
 if __name__ == '__main__':
+    print('Starting')
     app = QApplication(sys.argv)
 
-    program = spectraanalyzer()
+    program = SpectraAnalyzer()
 
     program.show()
     sys.exit(app.exec_())
