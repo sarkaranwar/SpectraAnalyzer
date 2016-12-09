@@ -1,103 +1,80 @@
 import sys
+import random
+import matplotlib
+matplotlib.use("Qt5Agg")
 # from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import *
+from PyQt5 import QtCore
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-from spectraanalyzer_ui import Ui_SpectraAnalyzer
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+# from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as FigureCanvas
+from matplotlib.figure import Figure
+from MainWindow import Ui_MainWindow
+import lmfit
+import numpy as np
+import time
 
 
-class SpectraAnalyzer(QMainWindow, Ui_SpectraAnalyzer):
+class MyMplCanvas(FigureCanvas):
+    """Ultimately, this is a QWidget (as well as a FigureCanvasAgg, etc.)."""
+    def __init__(self, parent=None):
+        fig = Figure()
+        self.axes = fig.add_subplot(111)
+        self.axes.hold(False)
+        FigureCanvas.__init__(self, fig)
+        self.setParent(parent)
+
+        FigureCanvas.setSizePolicy(self, QSizePolicy.Expanding, QSizePolicy.Expanding)
+        FigureCanvas.updateGeometry(self)
+
+    def plot_data(self, data_x, data_y, exp_y):
+        self.axes.clear()
+        self.axes.hold(True)
+        self.axes.plot(data_x, data_y, label='Fitted Data')
+        self.axes.plot(data_x, exp_y, label='Experimental Data')
+        # self.canvas.legend()
+        self.axes.hold(False)
+        self.draw()
+
+
+class SpectraAnalyzer(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(SpectraAnalyzer, self).__init__(parent)
         self.setupUi(self)
-
         # Connect "add" button with a custom function (addInputTextToListbox)
-        self.pushButton_browse_1.clicked.connect(self.get_folder_name_1)
-        self.pushButton_browse_2.clicked.connect(self.get_folder_name_2)
-        self.pushButton_browse_3.clicked.connect(self.get_folder_name_3)
-        self.pushButton_browse_4.clicked.connect(self.get_folder_name_4)
-        self.pushButton_browse_5.clicked.connect(self.get_folder_name_5)
-        self.pushButton_browse_6.clicked.connect(self.get_folder_name_6)
-        self.pushButton_browse_7.clicked.connect(self.get_folder_name_7)
-        self.pushButton_browse_8.clicked.connect(self.get_folder_name_8)
-        self.pushButton_browse_9.clicked.connect(self.get_folder_name_9)
-        self.pushButton_browse_10.clicked.connect(self.get_folder_name_10)
-        self.pushButton_browse_11.clicked.connect(self.get_folder_name_11)
-        self.pushButton_browse_12.clicked.connect(self.get_folder_name_12)
-        self.pushButton_browse_13.clicked.connect(self.get_folder_name_13)
-        self.pushButton_browse_14.clicked.connect(self.get_folder_name_14)
-        self.pushButton_browse_15.clicked.connect(self.get_folder_name_15)
-        self.pushButton_browse_16.clicked.connect(self.get_folder_name_16)
+        self.pushButton.clicked.connect(self.fit)
+        self.pushButton_2.clicked.connect(self.get_address)
+        v_box = QVBoxLayout(self.canvas)
+        self.static_canvas = MyMplCanvas(self.canvas)
+        v_box.addWidget(self.static_canvas)
 
-    def get_folder_name_1(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_1.setText(directory)
+    def plot_data(self, data_x, data_y, exp_y):
+        self.static_canvas.plot_data(data_x, data_y, exp_y)
 
-    def get_folder_name_2(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_2.setText(directory)
+    def fit(self):
+        data = self.read_data()
+        binding_energy = data[:, 0]
+        counts = data[:, 1]
+        # binding_energy = np.linspace(-10, 10, 1000)
+        gaussian = float(self.lineEdit.text())
+        laurentzian = float(self.lineEdit_2.text())
+        center = float(self.lineEdit_3.text())
+        height = float(self.lineEdit_4.text())
+        y = lmfit.models.voigt(binding_energy, height, center, gaussian, laurentzian)
 
-    def get_folder_name_3(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_3.setText(directory)
+        self.plot_data(binding_energy, counts, y)
 
-    def get_folder_name_4(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_4.setText(directory)
+    def get_address(self):
+        file_name, _ = QFileDialog.getOpenFileName(self, 'Open file')
+        self.lineEdit_5.setText(file_name)
 
-    def get_folder_name_5(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_5.setText(directory)
-
-    def get_folder_name_6(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_6.setText(directory)
-
-    def get_folder_name_7(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_7.setText(directory)
-
-    def get_folder_name_8(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_8.setText(directory)
-
-    def get_folder_name_9(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_9.setText(directory)
-
-    def get_folder_name_10(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_10.setText(directory)
-
-    def get_folder_name_11(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_11.setText(directory)
-
-    def get_folder_name_12(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_12.setText(directory)
-
-    def get_folder_name_13(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_13.setText(directory)
-
-    def get_folder_name_14(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_14.setText(directory)
-
-    def get_folder_name_15(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_15.setText(directory)
-
-    def get_folder_name_16(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
-        self.lineEdit_project_Sample_16.setText(directory)
-
+    def read_data(self):
+        path = self.lineEdit_5.text()
+        data = np.loadtxt(path, delimiter="\t")
+        return data[:, 1:3]
 
 if __name__ == '__main__':
-    print('Starting')
     app = QApplication(sys.argv)
-
     program = SpectraAnalyzer()
 
     program.show()
