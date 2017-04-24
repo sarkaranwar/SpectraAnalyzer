@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="lineEdit_gaussian">
     <property name="geometry">
      <rect>
       <x>14</x>
@@ -27,7 +27,7 @@
      <string>1</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="lineEdit_lorentzian">
     <property name="geometry">
      <rect>
       <x>153</x>
@@ -40,7 +40,7 @@
      <string>1</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
+   <widget class="QLineEdit" name="lineEdit_center">
     <property name="geometry">
      <rect>
       <x>292</x>
@@ -53,7 +53,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_4">
+   <widget class="QLineEdit" name="lineEdit_height">
     <property name="geometry">
      <rect>
       <x>431</x>
@@ -89,7 +89,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Laurenztian</string>
+     <string>Lorenztian</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -110,15 +110,15 @@
      <rect>
       <x>431</x>
       <y>517</y>
-      <width>23</width>
+      <width>31</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Area</string>
+     <string>Height</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButton_fit">
     <property name="geometry">
      <rect>
       <x>570</x>
@@ -153,7 +153,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_5">
+   <widget class="QLineEdit" name="lineEdit_address">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -166,7 +166,7 @@
      <string>C:\</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_browse">
     <property name="geometry">
      <rect>
       <x>1030</x>
@@ -177,6 +177,96 @@
     </property>
     <property name="text">
      <string>Browse</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_constant_background">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>470</y>
+      <width>131</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Constant Background</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_linear_background">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>490</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Linear Background</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_step_background">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>530</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Step Background</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_polynomial_background">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>510</y>
+      <width>131</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Polynomial Background</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_peak">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>440</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Voigt</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Gaussian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Lorentzian</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>420</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Peak Type</string>
     </property>
    </widget>
   </widget>
